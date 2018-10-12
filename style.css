@@ -1,0 +1,130 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+    font-family: "digital";
+    src: url(digital.ttf) format("truetype");
+}
+p.customfont { 
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+
+body {
+    background-color: black;
+    text-align: center;
+    margin: 0;
+}
+
+.zero { grid-area: zero; }
+.one { grid-area: one; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.four { grid-area: four; }
+.five { grid-area: five; }
+.six { grid-area: six; }
+.seven { grid-area: seven; }
+.eight { grid-area: eight; }
+.nine { grid-area: nine; }
+
+.dot { grid-area: dot; }
+.plus { grid-area: plus; }
+.minus { grid-area: minus; }
+.divide { grid-area: divide; }
+.multiply { grid-area: multiply; }
+
+.reset { grid-area: reset; }
+.equals { grid-area: equals; }
+
+#calculator {
+    width: 316px;
+    padding: 0px;
+    text-align: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+        "reset divide multiply minus"
+        "seven eight nine plus"
+        "four five six plus"
+        "one two three equals"
+        "dot zero zero equals";
+}
+
+#input {
+    padding: 20px;
+    text-align: right;
+    margin: 20px auto;
+    border: none;
+    font-size: 65px;
+    width: 266px;
+    background-color: rgb(162, 184, 150);
+    box-shadow: inset 2px 1px 15px black;
+    color: black;
+    font-family: "digital", Verdana, Tahoma;
+}
+
+#calculator button {
+    display: grid;
+    font-size: 25px;
+    margin: 2px;
+    min-height: 70px;
+    max-height: 176px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#calculator button:hover {
+    background-color: sandybrown;
+}
+
+#calculator button:active {
+    color: white;
+}
+
+.reset,
+.equals {
+    background-color: sandybrown;
+}
+
+.reset:hover,
+.equals:hover {
+    background-color: rgb(0, 212, 81) !important;
+}
+
+footer {
+    width: 300px;
+    margin: 10px auto 0 auto;
+    color: grey;
+    font-size: 0.8rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (orientation: landscape) {
+    #input {
+        padding: 10px;
+        text-align: right;
+        margin: 10px auto;
+        border: none;
+        font-size: 40px;
+        width: 540px;
+    }
+    #calculator {
+        width: 566px;
+        padding: 0px;
+        text-align: center;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+            "reset seven eight nine plus minus divide"
+            "zero four five six plus minus multiply"
+            "zero one two three dot equals equals";
+    }
+    footer {
+        display: none;
+    }
+}
